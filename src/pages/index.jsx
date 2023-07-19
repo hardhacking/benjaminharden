@@ -2,6 +2,7 @@ import Head from 'next/head'
 import Image from 'next/image'
 import Link from 'next/link'
 import clsx from 'clsx'
+import { useRouter } from 'next/router'
 
 import { Button } from '@/components/Button'
 import { Card } from '@/components/Card'
@@ -112,9 +113,34 @@ function SocialLink({ icon: Icon, ...props }) {
 }
 
 function Newsletter() {
+    const router = useRouter()
+    const handleSubmit = async (e) => {
+        e.preventDefault();
+        const emailContent = e.target.email.value + " Wants to join you newsletter" ;
+        try {
+          const response = await fetch('/api/sendEmail', {
+            method: 'POST',
+            headers: {
+              'Content-Type': 'application/json',
+            },
+            body: JSON.stringify({ emailContent }),
+          });
+    
+          if (response.ok) {
+            // Email sent successfully
+            console.log('Email sent successfully');
+          } else {
+            // Handle error if sending the email fails
+            console.error('Error sending email');
+          }
+        } catch (error) {
+          console.error('Error sending email:', error);
+        }
+        router.push('/thank-you')
+    };
   return (
     <form
-      action="/thank-you"
+      onSubmit={handleSubmit}
       className="rounded-2xl border border-zinc-100 p-6 dark:border-zinc-700/40"
     >
       <h2 className="flex text-sm font-semibold text-zinc-900 dark:text-zinc-100">
@@ -127,6 +153,7 @@ function Newsletter() {
       <div className="mt-6 flex">
         <input
           type="email"
+          name="email"
           placeholder="Email address"
           aria-label="Email address"
           required
@@ -140,28 +167,64 @@ function Newsletter() {
   )
 }
 
+//re_65Zp6L5p_F349U5UMkHnUopw6Job8bh4X
+// const resend = new Resend('re_65Zp6L5p_F349U5UMkHnUopw6Job8bh4X');
+// async function sendEmail(emailContent) {
+//   console.log('sending');
+//   try {
+//     const data = await resend.emails.send({
+//       from: 'onboarding@resend.dev',
+//       to: 'ben9harden9@gmail.com',
+//       subject: 'Hello World',
+//       html: emailContent
+//     });
+//     return data;
+//   } catch (error) {
+//     throw new Error(error);
+//   }
+// }
+
 function ContactMe() {
+    const handleSubmit = async (e) => {
+      e.preventDefault();
+      const emailContent = e.target.message.value + ' from - ' + e.target.email.value;
+  
+      try {
+        const response = await fetch('/api/sendEmail', {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json',
+          },
+          body: JSON.stringify({ emailContent }),
+        });
+  
+        if (response.ok) {
+          // Email sent successfully
+          console.log('Email sent successfully');
+        } else {
+          // Handle error if sending the email fails
+          console.error('Error sending email');
+        }
+      } catch (error) {
+        console.error('Error sending email:', error);
+      }
+    };
+  
     return (
       <form
-        // action="/thank-you"
+        onSubmit={handleSubmit}
         className="rounded-2xl border border-zinc-100 p-6 dark:border-zinc-700/40"
       >
-        <h2 className="flex text-sm font-semibold text-zinc-900 dark:text-zinc-100">
-          <MailIcon className="h-6 w-6 flex-none" />
-          <span className="ml-3">Contact me</span>
-        </h2>
-        <p className="mt-2 text-sm text-zinc-600 dark:text-zinc-400">
-          Send me and email. I would love to hear your feedback or talk about opportunities.
-        </p>
+        {/* Form contents */}
         <div className="mt-6 flex">
-            <textarea
-                name="message"
-                rows="4"
-                placeholder="Hey Ben, How's it going. I wanted to tell you...."
-                aria-label="Email address"
-                required
-                className="min-w-0 flex-auto appearance-none rounded-md border border-zinc-900/10 bg-white px-3 py-[calc(theme(spacing.2)-1px)] shadow-md shadow-zinc-800/5 placeholder:text-zinc-400 focus:border-emerald-500 focus:outline-none focus:ring-4 focus:ring-emerald-500/10 dark:border-zinc-700 dark:bg-zinc-700/[0.15] dark:text-zinc-200 dark:placeholder:text-zinc-500 dark:focus:border-emerald-400 dark:focus:ring-emerald-400/10 sm:text-sm"
-            ></textarea>
+          <textarea
+            name="message"
+            rows="4"
+            placeholder="Hey Ben, How's it going. I wanted to tell you...."
+            aria-label="Email address"
+            required
+            className="min-w-0 flex-auto appearance-none rounded-md border border-zinc-900/10 bg-white px-3 py-[calc(theme(spacing.2)-1px)] shadow-md shadow-zinc-800/5 placeholder:text-zinc-400 focus:border-emerald-500 focus:outline-none focus:ring-4 focus:ring-emerald-500/10 dark:border-zinc-700 dark:bg-zinc-700/[0.15] dark:text-zinc-200 dark:placeholder:text-zinc-500 dark:focus:border-emerald-400 dark:focus:ring-emerald-400/10 sm:text-sm"
+          ></textarea>
         </div>
         <div className="mt-6 flex">
           <input
@@ -177,8 +240,15 @@ function ContactMe() {
           </Button>
         </div>
       </form>
-    )
+    );
   }
+  
+  
+  
+  
+  
+  
+  
 
 function Resume() {
   let resume = [
