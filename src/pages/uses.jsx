@@ -37,7 +37,7 @@ export default function Uses() {
       </Head>
       <SimpleLayout
         title="Software I use, gadgets I love, and other things I recommend."
-        intro="I get asked a lot about the things I use to build software, stay productive, and make my life easier. Here are just few"
+        intro="I get asked a lot about the things I use to build software, stay productive, and make my life easier. Here are just few:"
       >
         <div className="space-y-20">
           <ToolsSection title="Workstation">
@@ -47,16 +47,16 @@ export default function Uses() {
           </ToolsSection>
           <ToolsSection title="Development tools">
             <Tool title="Visual Studio Code">
-              Their may be many language specific IDE's out their with amazing features. I am more than willing to use them when appropriate. But for a fullstack developer flexability is the most important thing and for that Visual Studios Code takes the cake.
+              Their may be many language specific IDEs out their with amazing features. I am more than willing to use them when appropriate. But for a fullstack developer flexibility is the most important thing and for that Visual Studio Code takes the cake.
             </Tool>
             <Tool title="Supabase">
-              Hands down the best product since sliced bread. Wether you are a seasoned veteran or still coding on your moms computer use supabase for you database needs and you will be a more productive developer.
+              Hands down the best product since sliced bread. Whether you are a seasoned veteran or still coding on your mom's computer, use supabase for your database needs and you will be a more productive developer.
             </Tool>
           </ToolsSection>
           <ToolsSection title="Design">
             <Tool title="Figma">
-              Great software for design an prototyping. 
-              Cannot tell you how many deals have been closed and bosses impressed by a quick 
+              Great software for design and prototyping. 
+              I Cannot tell you how many deals have been closed and bosses impressed by a quick 
               figma prototype with a sharable link. Don't under estimate it.
             </Tool>
           </ToolsSection>

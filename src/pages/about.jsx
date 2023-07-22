@@ -62,41 +62,55 @@ export default function About() {
           </div>
           <div className="lg:order-first lg:row-span-2">
             <h1 className="text-4xl font-bold tracking-tight text-zinc-800 dark:text-zinc-100 sm:text-5xl">
-              I’m Benjamin Harden. <br/>
-              Living in Salt Lake City. <br/>
+              I’m Benjamin Harden. <br />
+              Living in Salt Lake City. <br />
               Loving to code!
             </h1>
             <div className="mt-6 space-y-7 text-base text-zinc-600 dark:text-zinc-400">
               <p>
-                I have always considered myself the creative type. As a kid I constantly felt the desire to create new things.
-                Before I discovered programming I felt like an artist without a canvas. Now I feel like I can build anthing.
+                I have always considered myself the creative type. As a kid I
+                constantly felt the desire to create new things. Before I
+                discovered programming I felt like an artist without a canvas.
+                Now I feel like I can build anthing.
               </p>
               <p>
-                These days, as a Software Engineer with a degree in Computer Science, my love for innovation continues to thrive. 
-                I relish the opportunity to work with cutting-edge products and witness the unfolding of groundbreaking advancements. 
-                Beyond the world of technology, I find solace in rock climbing, where the thrill of conquering challenges fuels my spirit. 
-                As a co-founder of a new tech startup called phantomb, I bring my expertise and experience to drive our venture forward.
+                These days, as a Software Engineer with a degree in Computer
+                Science, my love for innovation continues to thrive. I relish
+                the opportunity to work with cutting-edge products and witness
+                the unfolding of groundbreaking advancements. Beyond the world
+                of technology, I find solace in rock climbing, where the thrill
+                of conquering challenges fuels my spirit. As a co-founder of a
+                new tech startup called Phantomb, I bring my expertise and
+                experience to drive our venture forward.
               </p>
               <p>
-                I am incredibly grateful to be living in such a unique era, where technological advancements and transformative ideas are shaping the world at an unprecedented pace.
-                It's a time of boundless possibilities, where innovation knows no bounds. 
-                I am excoted to witness and participate in this remarkable period.
-                I am determined to leave my mark. I am driven to contribute my skills, knowledge, and passion to make a lasting impact on society, pushing the boundaries of what is possible and leaving a positive legacy for future generations.
+                I am incredibly grateful to be living in such a unique era,
+                where technological advancements and transformative ideas are
+                shaping the world at an unprecedented pace. It's a time of
+                boundless possibilities, where innovation knows no bounds. I am
+                excited to witness and participate in this remarkable period. I
+                am determined to leave my mark. I am driven to contribute my
+                skills, knowledge, and passion to make a lasting impact on
+                society, pushing the boundaries of what is possible and leaving
+                a positive legacy for future generations.
               </p>
               <p>
-                Although I have worked on many exciting projects already.
-                I firmly believe the best days are still ahead. If you have an idea that you think will change the world <b>Let me know</b>.
+                Although I have worked on many exciting projects already, I
+                firmly believe the best days are still ahead. If you have an
+                idea that you think will change the world <b>let me know</b>.
               </p>
             </div>
           </div>
           <div className="lg:pl-20">
             <ul role="list">
-              <SocialLink 
+              <SocialLink
                 href="https://twitter.com/hardhacking"
                 target="_blank"
                 aria-label="Follow on Twitter"
                 icon={TwitterIcon}
-              >Follow on Twitter</SocialLink>
+              >
+                Follow on Twitter
+              </SocialLink>
 
               <SocialLink
                 href="https://www.instagram.com/benjaminhrden/"
@@ -104,26 +118,32 @@ export default function About() {
                 aria-label="Follow on Instagram"
                 icon={InstagramIcon}
                 className="mt-4"
-                >Follow on Instagram</SocialLink>
+              >
+                Follow on Instagram
+              </SocialLink>
 
               <SocialLink
-                href="https://www.instagram.com/benjaminhrden/"
+                href="https://github.com/hardhacking"
                 target="_blank"
                 aria-label="Follow on Instagram"
                 icon={GitHubIcon}
                 className="mt-4"
-                >Follow on Github</SocialLink>
+              >
+                Follow on Github
+              </SocialLink>
 
               <SocialLink
-                href="https://www.instagram.com/benjaminhrden/"
+                href="https://www.linkedin.com/in/benjamin-harden-b395a61b1/"
                 target="_blank"
                 aria-label="Follow on Instagram"
                 icon={LinkedInIcon}
                 className="mt-4"
-                >Follow on Linkedin</SocialLink>
-                
+              >
+                Follow on Linkedin
+              </SocialLink>
+
               <SocialLink
-                href="mailto:spencer@planetaria.tech"
+                href="mailto:benjaminharden0@gmail.com"
                 icon={MailIcon}
                 className="mt-8 border-t border-zinc-100 pt-8 dark:border-zinc-700/40"
               >

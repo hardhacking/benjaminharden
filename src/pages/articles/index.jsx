@@ -45,7 +45,7 @@ export default function ArticlesIndex({ articles }) {
         />
       </Head>
       <SimpleLayout
-        title="Published works on software and development and the field of tech"
+        title="Published works on software development and the field of tech"
         intro="Thoughts and best guesses on programming, startups, product design, and more, I'm not much of a writer so it's a short list."
       >
         <div className="md:border-l md:border-zinc-100 md:pl-6 md:dark:border-zinc-700/40">
