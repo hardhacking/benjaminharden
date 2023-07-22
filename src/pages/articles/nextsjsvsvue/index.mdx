@@ -1,0 +1,127 @@
+import { ArticleLayout } from '@/components/ArticleLayout'
+import Image from 'next/image'
+import designSystem from './next-js-vs-vue-js.png'
+
+export const meta = {
+  author: 'Benjamin Harden',
+  date: '2023-07-22',
+  title: 'Photo finsih. A Tiebreaking Comparison between Vue.js and Next.js',
+  description:
+    'Explore the differences between Vue.js and Next.js in this concise article. Discover Vue.js simplicity and component-based architecture, and see how to create a basic Vue component. Next.js, built on React, excels in server-side rendering and static site generation. Understand their unique strengths to choose the right framework for your web development needs.',
+}
+
+export default (props) => <ArticleLayout meta={meta} {...props} />
+
+Explore the differences between Vue.js and Next.js in this concise article. Discover Vue.js simplicity and component-based architecture, and see how to create a basic Vue component.
+Next.js, built on React, excels in server-side rendering and static site generation. Understand their unique strengths to choose the right framework for your web development needs.
+
+<Image src={designSystem} alt="" />
+
+## Introduction
+
+Vue.js and Next.js are two popular JavaScript frameworks used for building dynamic and interactive web applications.
+While both frameworks have their unique features, they cater to different use cases and development approaches.
+In this article, we will explore the key differences between Vue.js and Next.js, along with code examples to illustrate their functionalities.
+
+## Overview of Vue.js
+
+Vue.js is a progressive JavaScript framework that is widely known for its simplicity and flexibility. 
+It allows developers to build user interfaces efficiently and emphasizes the component-based architecture.
+Vue.js focuses on the view layer, making it easy to integrate with other projects or existing applications.
+
+## Overview of Next.js
+
+Next.js, on the other hand, is a framework built on top of React that primarily focuses on server-side rendering (SSR) and static site generation (SSG).
+It provides a seamless developer experience with features like automatic code splitting, hot module replacement, and serverless functions, making it ideal for building scalable and performant web applications.
+
+## Routing
+
+In Vue.js, routing is handled by Vue Router, a dedicated library for client-side routing. 
+Developers can define routes and their corresponding components, enabling navigation between different pages within the application.
+
+Example: Setting up Vue Router
+
+```js
+// main.js
+import Vue from 'vue';
+import VueRouter from 'vue-router';
+import Home from './components/Home.vue';
+import About from './components/About.vue';
+
+Vue.use(VueRouter);
+
+const routes = [
+  { path: '/', component: Home },
+  { path: '/about', component: About }
+];
+
+const router = new VueRouter({
+  routes
+});
+
+new Vue({
+  router,
+  el: '#app'
+});
+```
+
+In Next.js, routing is built-in and file-based. Each page is represented by a file in the "pages" directory, and Next.js automatically generates routes based on these files.
+
+Example: Setting up routing in Next.js
+
+```js
+// pages/index.js
+const HomePage = () => {
+  return (
+    <div>Hello, I am a Next.js page!</div>
+  );
+};
+
+export default HomePage;
+```
+
+## Server-Side Rendering and Data Fetching
+
+Next.js excels in server-side rendering, meaning that pages can be rendered on the server before being sent to the client. 
+This offers advantages in terms of SEO, initial page load performance, and dynamic data handling.
+
+Example: Server-side rendering in Next.js
+
+```jsx
+// pages/product/[id].js
+import { useRouter } from 'next/router';
+
+const ProductPage = ({ product }) => {
+  const router = useRouter();
+  const { id } = router.query;
+
+  return (
+    <div>
+      <h1>{product.name}</h1>
+      <p>{product.description}</p>
+    </div>
+  );
+};
+
+export async function getServerSideProps(context) {
+  // Fetch product data from an API or database based on the "id" parameter
+  const productId = context.params.id;
+  const product = await fetchProductById(productId);
+
+  return {
+    props: {
+      product,
+    },
+  };
+}
+
+export default ProductPage;
+```
+
+Vue.js, on the other hand, supports server-side rendering through third-party solutions like Nuxt.js. Nuxt.js provides a similar developer experience to Next.js but uses Vue.js at its core.
+
+## Conclusion
+
+In conclusion, both Vue.js and Next.js are powerful frameworks with their own strengths and use cases.
+Vue.js is well-suited for projects that require a flexible and progressive approach to building user interfaces, while Next.js shines when it comes to server-side rendering and static site generation. 
+Developers should choose the framework that aligns with their project requirements and development preferences to create robust and performant web applications.
