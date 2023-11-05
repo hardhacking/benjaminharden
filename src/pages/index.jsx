@@ -15,7 +15,8 @@ import {
 } from '@/components/SocialIcons'
 
 import logoNorthCapital from '@/images/logos/northcapital.png'
-import logoPhantomb from '@/images/logos/phantomb.svg'
+import logoFoxor from '@/images/logos/foxor.svg'
+import logoRedwood from '@/images/logos/redwood.png'
 import logoSummit from '@/images/logos/sgi.png'
 import logoReport from '@/images/logos/woodreport.png'
 
@@ -106,8 +107,8 @@ function Article({ article }) {
 
 function SocialLink({ icon: Icon, ...props }) {
   return (
-    <Link className="group -m-1 p-1" {...props}>
-      <Icon className="h-6 w-6 fill-zinc-500 transition group-hover:fill-zinc-600 dark:fill-zinc-400 dark:group-hover:fill-zinc-300" />
+    <Link className="p-1 -m-1 group" {...props}>
+      <Icon className="w-6 h-6 transition fill-zinc-500 group-hover:fill-zinc-600 dark:fill-zinc-400 dark:group-hover:fill-zinc-300" />
     </Link>
   )
 }
@@ -141,16 +142,16 @@ function Newsletter() {
   return (
     <form
       onSubmit={handleSubmit}
-      className="rounded-2xl border border-zinc-100 p-6 dark:border-zinc-700/40"
+      className="p-6 border rounded-2xl border-zinc-100 dark:border-zinc-700/40"
     >
       <h2 className="flex text-sm font-semibold text-zinc-900 dark:text-zinc-100">
-        <MailIcon className="h-6 w-6 flex-none" />
+        <MailIcon className="flex-none w-6 h-6" />
         <span className="ml-3">Stay up to date</span>
       </h2>
       <p className="mt-2 text-sm text-zinc-600 dark:text-zinc-400">
         Get notified when I publish something new, and unsubscribe at any time.
       </p>
-      <div className="mt-6 flex">
+      <div className="flex mt-6">
         <input
           type="email"
           name="email"
@@ -159,7 +160,7 @@ function Newsletter() {
           required
           className="min-w-0 flex-auto appearance-none rounded-md border border-zinc-900/10 bg-white px-3 py-[calc(theme(spacing.2)-1px)] shadow-md shadow-zinc-800/5 placeholder:text-zinc-400 focus:border-emerald-500 focus:outline-none focus:ring-4 focus:ring-emerald-500/10 dark:border-zinc-700 dark:bg-zinc-700/[0.15] dark:text-zinc-200 dark:placeholder:text-zinc-500 dark:focus:border-emerald-400 dark:focus:ring-emerald-400/10 sm:text-sm"
         />
-        <Button type="submit" className="ml-4 flex-none">
+        <Button type="submit" className="flex-none ml-4">
           Join
         </Button>
       </div>
@@ -184,64 +185,64 @@ function Newsletter() {
 //   }
 // }
 
-function ContactMe() {
-    const handleSubmit = async (e) => {
-      e.preventDefault();
-      const emailContent = e.target.message.value + ' from - ' + e.target.email.value;
+// function ContactMe() {
+//     const handleSubmit = async (e) => {
+//       e.preventDefault();
+//       const emailContent = e.target.message.value + ' from - ' + e.target.email.value;
   
-      try {
-        const response = await fetch('/api/sendEmail', {
-          method: 'POST',
-          headers: {
-            'Content-Type': 'application/json',
-          },
-          body: JSON.stringify({ emailContent }),
-        });
+//       try {
+//         const response = await fetch('/api/sendEmail', {
+//           method: 'POST',
+//           headers: {
+//             'Content-Type': 'application/json',
+//           },
+//           body: JSON.stringify({ emailContent }),
+//         });
   
-        if (response.ok) {
-          // Email sent successfully
-          console.log('Email sent successfully');
-        } else {
-          // Handle error if sending the email fails
-          console.error('Error sending email');
-        }
-      } catch (error) {
-        console.error('Error sending email:', error);
-      }
-    };
+//         if (response.ok) {
+//           // Email sent successfully
+//           console.log('Email sent successfully');
+//         } else {
+//           // Handle error if sending the email fails
+//           console.error('Error sending email');
+//         }
+//       } catch (error) {
+//         console.error('Error sending email:', error);
+//       }
+//     };
   
-    return (
-      <form
-        onSubmit={handleSubmit}
-        className="rounded-2xl border border-zinc-100 p-6 dark:border-zinc-700/40"
-      >
-        {/* Form contents */}
-        <div className="mt-6 flex">
-          <textarea
-            name="message"
-            rows="4"
-            placeholder="Hey Ben, How's it going. I wanted to tell you...."
-            aria-label="Email address"
-            required
-            className="min-w-0 flex-auto appearance-none rounded-md border border-zinc-900/10 bg-white px-3 py-[calc(theme(spacing.2)-1px)] shadow-md shadow-zinc-800/5 placeholder:text-zinc-400 focus:border-emerald-500 focus:outline-none focus:ring-4 focus:ring-emerald-500/10 dark:border-zinc-700 dark:bg-zinc-700/[0.15] dark:text-zinc-200 dark:placeholder:text-zinc-500 dark:focus:border-emerald-400 dark:focus:ring-emerald-400/10 sm:text-sm"
-          ></textarea>
-        </div>
-        <div className="mt-6 flex">
-          <input
-            type="email"
-            name="email"
-            placeholder="Email address"
-            aria-label="Email address"
-            required
-            className="min-w-0 flex-auto appearance-none rounded-md border border-zinc-900/10 bg-white px-3 py-[calc(theme(spacing.2)-1px)] shadow-md shadow-zinc-800/5 placeholder:text-zinc-400 focus:border-emerald-500 focus:outline-none focus:ring-4 focus:ring-emerald-500/10 dark:border-zinc-700 dark:bg-zinc-700/[0.15] dark:text-zinc-200 dark:placeholder:text-zinc-500 dark:focus:border-emerald-400 dark:focus:ring-emerald-400/10 sm:text-sm"
-          />
-          <Button type="submit" className="ml-4 flex-none">
-            Send
-          </Button>
-        </div>
-      </form>
-    );
-  }
+//     return (
+//       <form
+//         onSubmit={handleSubmit}
+//         className="p-6 border rounded-2xl border-zinc-100 dark:border-zinc-700/40"
+//       >
+//         {/* Form contents */}
+//         <div className="flex mt-6">
+//           <textarea
+//             name="message"
+//             rows="4"
+//             placeholder="Hey Ben, How's it going. I wanted to tell you...."
+//             aria-label="Email address"
+//             required
+//             className="min-w-0 flex-auto appearance-none rounded-md border border-zinc-900/10 bg-white px-3 py-[calc(theme(spacing.2)-1px)] shadow-md shadow-zinc-800/5 placeholder:text-zinc-400 focus:border-emerald-500 focus:outline-none focus:ring-4 focus:ring-emerald-500/10 dark:border-zinc-700 dark:bg-zinc-700/[0.15] dark:text-zinc-200 dark:placeholder:text-zinc-500 dark:focus:border-emerald-400 dark:focus:ring-emerald-400/10 sm:text-sm"
+//           ></textarea>
+//         </div>
+//         <div className="flex mt-6">
+//           <input
+//             type="email"
+//             name="email"
+//             placeholder="Email address"
+//             aria-label="Email address"
+//             required
+//             className="min-w-0 flex-auto appearance-none rounded-md border border-zinc-900/10 bg-white px-3 py-[calc(theme(spacing.2)-1px)] shadow-md shadow-zinc-800/5 placeholder:text-zinc-400 focus:border-emerald-500 focus:outline-none focus:ring-4 focus:ring-emerald-500/10 dark:border-zinc-700 dark:bg-zinc-700/[0.15] dark:text-zinc-200 dark:placeholder:text-zinc-500 dark:focus:border-emerald-400 dark:focus:ring-emerald-400/10 sm:text-sm"
+//           />
+//           <Button type="submit" className="flex-none ml-4">
+//             Send
+//           </Button>
+//         </div>
+//       </form>
+//     );
+//   }
   
   
   
@@ -263,9 +264,16 @@ function Resume() {
       },
     },
     {
-      company: 'Phantomb',
+      company: 'Redwood',
       title: 'Founder',
-      logo: logoPhantomb,
+      logo: logoRedwood,
+      start: '2023',
+      end: 'Present',
+    },
+    {
+      company: 'Foxor',
+      title: 'Founder',
+      logo: logoFoxor,
       start: '2023',
       end: 'Present',
     },
@@ -286,20 +294,20 @@ function Resume() {
   ]
 
   return (
-    <div className="rounded-2xl border border-zinc-100 p-6 dark:border-zinc-700/40">
+    <div className="p-6 border rounded-2xl border-zinc-100 dark:border-zinc-700/40">
       <h2 className="flex text-sm font-semibold text-zinc-900 dark:text-zinc-100">
-        <BriefcaseIcon className="h-6 w-6 flex-none" />
+        <BriefcaseIcon className="flex-none w-6 h-6" />
         <span className="ml-3">Work</span>
       </h2>
       <ol className="mt-6 space-y-4">
         {resume.map((role, roleIndex) => (
           <li key={roleIndex} className="flex gap-4">
-            <div className="relative mt-1 flex h-10 w-10 flex-none items-center justify-center rounded-full shadow-md shadow-zinc-800/5 ring-1 ring-zinc-900/5 dark:border dark:border-zinc-700/50 dark:bg-zinc-800 dark:ring-0">
+            <div className="relative flex items-center justify-center flex-none w-10 h-10 mt-1 rounded-full shadow-md shadow-zinc-800/5 ring-1 ring-zinc-900/5 dark:border dark:border-zinc-700/50 dark:bg-zinc-800 dark:ring-0">
               <Image src={role.logo} alt="" className="h-7 w-7" unoptimized />
             </div>
-            <dl className="flex flex-auto flex-wrap gap-x-2">
+            <dl className="flex flex-wrap flex-auto gap-x-2">
               <dt className="sr-only">Company</dt>
-              <dd className="w-full flex-none text-sm font-medium text-zinc-900 dark:text-zinc-100">
+              <dd className="flex-none w-full text-sm font-medium text-zinc-900 dark:text-zinc-100">
                 {role.company}
               </dd>
               <dt className="sr-only">Role</dt>
@@ -325,9 +333,9 @@ function Resume() {
           </li>
         ))}
       </ol>
-      <Button href="#" variant="secondary" className="group mt-6 w-full">
+      <Button href="https://docs.google.com/document/d/19cXNDM-Zm_u7jwonNxuhJlQUVltU4g3HvZTO0xxGoB4/edit?usp=sharing" variant="secondary" className="w-full mt-6 group">
         Download CV
-        <ArrowDownIcon className="h-4 w-4 stroke-zinc-400 transition group-active:stroke-zinc-600 dark:group-hover:stroke-zinc-50 dark:group-active:stroke-zinc-50" />
+        <ArrowDownIcon className="w-4 h-4 transition stroke-zinc-400 group-active:stroke-zinc-600 dark:group-hover:stroke-zinc-50 dark:group-active:stroke-zinc-50" />
       </Button>
     </div>
   )
@@ -338,7 +346,7 @@ function Photos() {
 
   return (
     <div className="mt-16 sm:mt-20">
-      <div className="-my-4 flex justify-center gap-5 overflow-hidden py-4 sm:gap-8">
+      <div className="flex justify-center gap-5 py-4 -my-4 overflow-hidden sm:gap-8">
         {[image1, image2, image3, image4, image5].map((image, imageIndex) => (
           <div
             key={image.src}
@@ -351,7 +359,7 @@ function Photos() {
               src={image}
               alt=""
               sizes="(min-width: 640px) 18rem, 11rem"
-              className="absolute inset-0 h-full w-full object-cover"
+              className="absolute inset-0 object-cover w-full h-full"
             />
           </div>
         ))}
@@ -382,7 +390,7 @@ export default function Home({ articles }) {
             City. I’m the founder and CEO of Hardensoftware LLC and Phantomb Stream, technology
             is my focus, my hobby, and my career.
           </p>
-          <div className="mt-6 flex gap-6">
+          <div className="flex gap-6 mt-6">
                 <SocialLink
                     href="https://twitter.com/hardhacking"
                     target="_blank"
@@ -412,7 +420,7 @@ export default function Home({ articles }) {
       </Container>
       <Photos />
       <Container className="mt-24 md:mt-28">
-        <div className="mx-auto grid max-w-xl grid-cols-1 gap-y-20 lg:max-w-none lg:grid-cols-2">
+        <div className="grid max-w-xl grid-cols-1 mx-auto gap-y-20 lg:max-w-none lg:grid-cols-2">
           <div className="flex flex-col gap-16">
             {articles.map((article) => (
               <Article key={article.slug} article={article} />
@@ -421,7 +429,7 @@ export default function Home({ articles }) {
           <div className="space-y-10 lg:pl-16 xl:pl-24">
             <Newsletter />
             <Resume />
-            <ContactMe />
+            {/* <ContactMe /> */}
           </div>
         </div>
       </Container>

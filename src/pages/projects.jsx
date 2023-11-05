@@ -6,16 +6,17 @@ import { SimpleLayout } from '@/components/SimpleLayout'
 
 import logoOpera from '@/images/logos/opera.png'
 import logoNorthCapital from '@/images/logos/northcapital.png'
-import logoPhantomb from '@/images/logos/phantomb.svg'
+import logoFoxor from '@/images/logos/foxor.svg'
 import logoSummit from '@/images/logos/sgi.png'
 import logoReport from '@/images/logos/woodreport.png'
+import logoRedwoods from '@/images/logos/redwood.png'
 
 const projects = [
   {
     name: 'Opera',
     description:
       'Empowering advisors, intermediaries, issuers and investors by providing access and transparency to alternative assets.',
-    link: { href: 'https://opra-dev.com', label: 'opera.com' },
+    link: { href: 'https://operaalts.com', label: 'operaalts.com' },
     logo: logoOpera,
   },
   {
@@ -40,11 +41,18 @@ const projects = [
     logo: logoReport,
   },
   {
-    name: 'Phantomb',
+    name: 'Foxor',
     description:
       '"Experience real life", the future of the content creation and streaming industry.',
-    link: { href: '', label: 'Coming Soon' },
-    logo: logoPhantomb,
+    link: { href: 'https://foxor.io', label: 'foxor.io' },
+    logo: logoFoxor,
+  },
+  {
+    name: 'Redwood',
+    description:
+      'Disrupting the Sales industry with a new CRM focused on entrepreneurs and small business. Using the simple Saas model rather then the labor intensive B2B model.',
+    link: { href: 'https://redwoodclients.com', label: 'redwoodclients.com' },
+    logo: logoRedwoods,
   },
 ]
 
@@ -79,11 +87,11 @@ export default function Projects() {
         >
           {projects.map((project) => (
             <Card as="li" key={project.name}>
-              <div className="relative z-10 flex h-12 w-12 items-center justify-center rounded-full bg-white shadow-md shadow-zinc-800/5 ring-1 ring-zinc-900/5 dark:border dark:border-zinc-700/50 dark:bg-zinc-800 dark:ring-0">
+              <div className="relative z-10 flex items-center justify-center w-12 h-12 bg-white rounded-full shadow-md shadow-zinc-800/5 ring-1 ring-zinc-900/5 dark:border dark:border-zinc-700/50 dark:bg-zinc-800 dark:ring-0">
                 <Image
                   src={project.logo}
                   alt=""
-                  className="h-8 w-8"
+                  className="w-8 h-8"
                   unoptimized
                 />
               </div>
@@ -91,8 +99,8 @@ export default function Projects() {
                 <Card.Link href={project.link.href} target="_blank" >{project.name}</Card.Link>
               </h2>
               <Card.Description>{project.description}</Card.Description>
-              <p className="relative z-10 mt-6 flex text-sm font-medium text-zinc-400 transition group-hover:text-emerald-500 dark:text-zinc-200">
-                <LinkIcon className="h-6 w-6 flex-none" />
+              <p className="relative z-10 flex mt-6 text-sm font-medium transition text-zinc-400 group-hover:text-emerald-500 dark:text-zinc-200">
+                <LinkIcon className="flex-none w-6 h-6" />
                 <span className="ml-2">{project.link.label}</span>
               </p>
             </Card>
