@@ -17,8 +17,10 @@ import {
 import logoNorthCapital from '@/images/logos/northcapital.png'
 import logoFoxor from '@/images/logos/foxor.svg'
 import logoRedwood from '@/images/logos/redwood.png'
+import logoEspn from '@/images/logos/espn.png'
 import logoSummit from '@/images/logos/sgi.png'
 import logoReport from '@/images/logos/woodreport.png'
+import logoSunstar from '@/images/logos/sunstar.png'
 
 import image1 from '@/images/photos/setup.jpeg'
 import image2 from '@/images/photos/rockclimbing.png'
@@ -264,16 +266,16 @@ function Resume() {
       },
     },
     {
-      company: 'Redwood',
-      title: 'Founder',
-      logo: logoRedwood,
+      company: 'ESPN',
+      title: 'Contractor',
+      logo: logoEspn,
       start: '2023',
       end: 'Present',
     },
     {
-      company: 'Foxor',
+      company: 'Redwood Releases',
       title: 'Founder',
-      logo: logoFoxor,
+      logo: logoRedwood,
       start: '2023',
       end: 'Present',
     },
@@ -284,6 +286,20 @@ function Resume() {
       start: '2017',
       end: '2022',
     },
+    {
+      company: 'Sunstar Strategic',
+      title: 'Contractor',
+      logo: logoSunstar,
+      start: '2024',
+      end: 'Present',
+    },
+    // {
+    //   company: 'Foxor',
+    //   title: 'Founder',
+    //   logo: logoFoxor,
+    //   start: '2023',
+    //   end: 'Present',
+    // },
     {
         company: 'The Wood Report XC',
         title: 'CTO',
@@ -386,8 +402,8 @@ export default function Home({ articles }) {
             Fullstack Developer
           </h1>
           <p className="mt-6 text-base text-zinc-600 dark:text-zinc-400">
-            I’m Benjamin Harden, a fullstack developer and entrepreneur based in Salt Lake
-            City. I’m the founder and CEO of Hardensoftware LLC and Phantomb Stream, technology
+            I'm Benjamin Harden, a senior fullstack developer and entrepreneur based in Salt Lake
+            City. I'm the founder of Redwood (Redwood Clients and Redwood Releases), technology
             is my focus, my hobby, and my career.
           </p>
           <div className="flex gap-6 mt-6">

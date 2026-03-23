@@ -41,7 +41,7 @@ export default function Uses() {
       >
         <div className="space-y-20">
           <ToolsSection title="Workstation">
-            <Tool title="16” MacBook Pro, M1 Max, 64GB RAM (2022s)">
+            <Tool title='14" MacBook Pro, M4 Pro, 48GB RAM'>
               The best computer for developing in a hybrid or work from home environment. If you disagree with me let me know and I will be more than happy to tell you why you are wrong.
             </Tool>
           </ToolsSection>
@@ -52,6 +52,12 @@ export default function Uses() {
             <Tool title="Supabase">
               Hands down the best product since sliced bread. Whether you are a seasoned veteran or still coding on your mom's computer, use supabase for your database needs and you will be a more productive developer.
             </Tool>
+            <Tool title="Claude Code">
+              An agentic coding tool that lives in the terminal. Perfect for tackling complex, multi-step tasks across your codebase with natural language.
+            </Tool>
+            <Tool title="GitHub Copilot">
+              AI pair programming right in your editor. It autocompletes code, answers questions, and helps you ship faster without breaking your flow.
+            </Tool>
           </ToolsSection>
           <ToolsSection title="Design">
             <Tool title="Figma">
@@ -61,14 +67,11 @@ export default function Uses() {
             </Tool>
           </ToolsSection>
           <ToolsSection title="Productivity">
-            <Tool title="Trello">
-              For small or personal projects I find this is the best place to keep track of my work.
-              I would highly recommend this to any indie developer and even to some startups.
-              The fact that it is free and even has an integration with unsplash are just icing on the cake.
+            <Tool title="TickTick">
+              My go-to for personal task management and small projects. Clean interface, natural language input, and built-in calendar and habit tracking make it perfect for staying on top of everything.
             </Tool>
-            <Tool title="Jira">
-              For large projects and teams I love Jira, the sprint creation features are life changing. Jira analytics are also vital to keeping a healthy development cycle.
-              It can feel a little tedious when you first start using it but the results are worth it.
+            <Tool title="Linear">
+              For team projects Linear is unmatched. Fast, beautifully designed, and opinionated in all the right ways. Cycles, roadmaps, and triage workflows keep the whole team moving.
             </Tool>
           </ToolsSection>
         </div>

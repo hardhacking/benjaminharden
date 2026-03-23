@@ -6,10 +6,12 @@ import { SimpleLayout } from '@/components/SimpleLayout'
 
 import logoOpera from '@/images/logos/opera.png'
 import logoNorthCapital from '@/images/logos/northcapital.png'
-import logoFoxor from '@/images/logos/foxor.svg'
+// import logoFoxor from '@/images/logos/foxor.svg'
 import logoSummit from '@/images/logos/sgi.png'
-import logoReport from '@/images/logos/woodreport.png'
+// import logoReport from '@/images/logos/woodreport.png'
 import logoRedwoods from '@/images/logos/redwood.png'
+import logoCollegeGameday from '@/images/logos/college_gameday.png'
+import logoSunstar from '@/images/logos/sunstar.png'
 
 const projects = [
   {
@@ -34,25 +36,25 @@ const projects = [
     logo: logoNorthCapital,
   },
   {
-    name: 'Cross Country Wood Report',
+    name: 'Redwood Releases',
     description:
-      "Tracking College Cross Country Data, race simluation and much more.",
-    link: { href: 'https://thewoodreportxc.com', label: 'thewoodreportxc.com' },
-    logo: logoReport,
-  },
-  {
-    name: 'Foxor',
-    description:
-      '"Experience real life", the future of the content creation and streaming industry.',
-    link: { href: 'https://foxor.io', label: 'foxor.io' },
-    logo: logoFoxor,
-  },
-  {
-    name: 'Redwood',
-    description:
-      'Disrupting the Sales industry with a new CRM focused on entrepreneurs and small business. Using the simple Saas model rather then the labor intensive B2B model.',
-    link: { href: 'https://redwoodclients.com', label: 'redwoodclients.com' },
+      'Track versions, manage changelogs, and coordinate deployments across your team — all in one beautiful dashboard. Ship releases with confidence.',
+    link: { href: 'https://redwoodreleases.com', label: 'redwoodreleases.com' },
     logo: logoRedwoods,
+  },
+  {
+    name: "ESPN's Stanford Steve",
+    description:
+      'A live picks app for ESPN College GameDay host Stanford Steve, allowing him to make and update his weekly college football predictions on screen in real time, powered by Supabase.',
+    link: { href: 'https://stanfordsteve.com', label: 'stanfordsteve.com' },
+    logo: logoCollegeGameday,
+  },
+  {
+    name: 'Sunstar Strategic',
+    description:
+      "Helping brands grow through influencer marketing. We connect brands with the right TV networks and influencers to create authentic content that resonates with their target audience.",
+    link: { href: 'https://sunstarstrategic.com', label: 'sunstarstrategic.com' },
+    logo: logoSunstar,
   },
 ]
 
